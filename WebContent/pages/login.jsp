@@ -59,7 +59,7 @@
 		</div> <!-- #content -->
 	</div> <!-- .container -->
 	<jsp:include page="/layout/footer.jsp"></jsp:include>
-	<jsp:include page="script.jsp"></jsp:include>
+	<jsp:include page="/layout/script.jsp"></jsp:include>
 	<script type="text/javascript">
     $(function() {
         // this will get the full URL at the address bar

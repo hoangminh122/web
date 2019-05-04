@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-ẻwerwerw
+			<% String a="JSP Nhom 8"; %>
+			<%=a %>
 </body>
 </html>
