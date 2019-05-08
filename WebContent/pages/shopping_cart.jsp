@@ -8,22 +8,22 @@
 <link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/dest/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/dest/vendors/colorbox/example3/colorbox.css">
+	<link rel="stylesheet" href="../assets/dest/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../assets/dest/vendors/colorbox/example3/colorbox.css">
 	<link rel="stylesheet" title="style" href="assets/dest/css/style.css">
 	<link rel="stylesheet" href="assets/dest/css/animate.css">
-	<link rel="stylesheet" title="style" href="assets/dest/css/huong-style.css">
+	<link rel="stylesheet" title="style" href="../assets/dest/css/huong-style.css">
 </head>
 <body>
 	<jsp:include page="/layout/header.jsp"></jsp:include>
 	<div class="inner-header">
 		<div class="container">
 			<div class="pull-left">
-				<h6 class="inner-title">Shopping Cart</h6>
+				<h6 class="inner-title">giỏ Hàng</h6>
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb font-large">
-					<a href="index.html">Home</a> / <span>Shopping Cart</span>
+					<a href="index.html">Home</a> / <span>giỏ Hàng</span>
 				</div>
 			</div>
 			<div class="clearfix"></div>

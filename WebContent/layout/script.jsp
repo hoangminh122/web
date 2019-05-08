@@ -1,12 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+
 		<div class="copyright">
 		<div class="container">
 			<p class="pull-left">Privacy policy. (&copy;) 2014</p>
@@ -22,20 +14,18 @@
 
 
 	<!-- include js files -->
-	<script src="assets/dest/js/jquery.js"></script>
-	<script src="assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
+	<script src="../assets/dest/js/jquery.js"></script>
+	<script src="../assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-	<script src="assets/dest/vendors/bxslider/jquery.bxslider.min.js"></script>
-	<script src="assets/dest/vendors/colorbox/jquery.colorbox-min.js"></script>
-	<script src="assets/dest/vendors/animo/Animo.js"></script>
-	<script src="assets/dest/vendors/dug/dug.js"></script>
-	<script src="assets/dest/js/scripts.min.js"></script>
-	<script src="assets/dest/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-	<script src="assets/dest/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-	<script src="assets/dest/js/waypoints.min.js"></script>
-	<script src="assets/dest/js/wow.min.js"></script>
+	<script src="../assets/dest/vendors/bxslider/jquery.bxslider.min.js"></script>
+	<script src="../assets/dest/vendors/colorbox/jquery.colorbox-min.js"></script>
+	<script src="../assets/dest/vendors/animo/Animo.js"></script>
+	<script src="../assets/dest/vendors/dug/dug.js"></script>
+	<script src="../assets/dest/js/scripts.min.js"></script>
+	<script src="../assets/dest/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="../assets/dest/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+	<script src="../assets/dest/js/waypoints.min.js"></script>
+	<script src="../assets/dest/js/wow.min.js"></script>
 	<!--customjs-->
-	<script src="assets/dest/js/custom2.js"></script>
+	<script src="../assets/dest/js/custom2.js"></script>
 	<script>
-</body>
-</html>

@@ -1,31 +1,36 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="model.products" %>
 <%@ page import="DAO.SanPhamMoi" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Trang chủ</title>
-
+<base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/web/" />
 <link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/dest/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../assets/dest/vendors/colorbox/example3/colorbox.css">
-	<link rel="stylesheet" href="../assets/dest/rs-plugin/css/settings.css">
-	<link rel="stylesheet" href="../assets/dest/rs-plugin/css/responsive.css">
-	<link rel="stylesheet" title="style" href="../assets/dest/css/style.css">
-	<link rel="stylesheet" href="../assets/dest/css/animate.css">
-	<link rel="stylesheet" title="style" href="../assets/dest/css/huong-style.css">
-	<link rel="stylesheet" title="style" href="../assets/dest/css/minh.css">
+	<link rel="stylesheet" href="assets/dest/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/dest/vendors/colorbox/example3/colorbox.css">
+	<link rel="stylesheet" href="assets/dest/rs-plugin/css/settings.css">
+	<link rel="stylesheet" href="assets/dest/rs-plugin/css/responsive.css">
+	<link rel="stylesheet" title="style" href="assets/dest/css/style.css">
+	<link rel="stylesheet" href="assets/dest/css/animate.css">
+	<link rel="stylesheet" title="style" href="assets/dest/css/huong-style.css">
+	<link rel="stylesheet" title="style" href="assets/dest/css/minh.css">
 	
 	
             
        
 </head>
 <body>
+ 
 	<jsp:include page="/layout/header.jsp"></jsp:include>
 	<jsp:include page="/layout/slide.jsp"></jsp:include>
 	<% SanPhamMoi temp=new SanPhamMoi();
@@ -62,7 +67,7 @@
 								<div class="col-sm-3" >
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="product.html"><img style="height:350px;"src="../image/product/<%=sp.getImage() %>"  alt=""></a>
+											<a href="product.html"><img style="height:350px;"src="image/product/<%=sp.getImage() %>"  alt=""></a>
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title"><%=sp.getName() %></p>
@@ -137,7 +142,7 @@
 								<div class="col-sm-3">
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="product.html"><img style="height:350px;" src="../image/product/<%=spmoiByPage11.get(j1).getImage() %>" alt=""></a>
+											<a href="product.html"><img style="height:350px;" src="image/product/<%=spmoiByPage11.get(j1).getImage() %>" alt=""></a>
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title"><%=spmoiByPage11.get(j1).getName() %></p>
