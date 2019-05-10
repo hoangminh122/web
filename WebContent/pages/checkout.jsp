@@ -70,6 +70,7 @@
 								<div class="your-order-item">
 									<div>
 									<!--  one item	 -->
+		<%for(){ %>
 										<div class="media">
 											<img width="25%" src="assets/dest/images/shoping1.jpg" alt="" class="pull-left">
 											<div class="media-body">
@@ -79,6 +80,7 @@
 												<span class="color-gray your-order-info">Qty: 1</span>
 											</div>
 										</div>
+				<%} %>
 									<!-- end one item -->
 									</div>
 									<div class="clearfix"></div>
