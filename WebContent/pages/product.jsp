@@ -136,7 +136,7 @@ String sql="SELECT * FROM products where id="+request.getParameter("id");
 							</div>
 							<%} %>
 						</div>
-					</div> <!-- .beta-products-list -->
+					</div> 
 				</div>
 				<div class="col-sm-3 aside">
 					<div class="widget">
