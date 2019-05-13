@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page import="DAO.DanhMucDAO"%>
 <%@page import="model.type_products" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -7,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/web/" />
 </head>
 <body>
 	<div id="header">
@@ -102,12 +104,12 @@
 				<div class="visible-xs clearfix"></div>
 				<nav class="main-menu">
 					<ul class="l-inline ov">
-						<li><a href="index.html">Trang chủ</a></li>
-						<li><a href="#">Sản phẩm</a>
+						<li><a href="pages/index.jsp">Trang chủ</a></li>
+						<li><a href="pages/type_products.jsp">Sản phẩm</a>
 							<ul class="sub-menu">
 							<% DanhMucDAO temp=new DanhMucDAO();
 							for(type_products loaisp :temp.getTypeProduct("SELECT * FROM type_products")){ %>
-								<li><a href="product_type.html"><%= loaisp.getName() %></a></li>
+								<li><a href="pages/type_products.jsp?id_type=<%=loaisp.getId()%>"><%= loaisp.getName() %></a></li>
 								<% } %>
 							</ul>
 						</li>

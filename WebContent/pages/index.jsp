@@ -77,7 +77,7 @@
 										</div>
 										<div class="single-item-caption">
 											<a class="add-to-cart pull-left" href="pages/addtoCart?productId=<%=sp.getId()%>"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+											<a class="beta-btn primary" href="pages/product.jsp?id=<%=sp.getId()%>">Xem Chi tiết <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
 									</div>
@@ -151,8 +151,8 @@
 											</p>
 										</div>
 										<div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="pages/addtoCart?productId=<%=sp.getId()%>"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+											<a class="add-to-cart pull-left" href="pages/addtoCart?productId=<%=spmoiByPage11.get(j1).getId()%>"><i class="fa fa-shopping-cart"></i></a>
+											<a class="beta-btn primary" href="pages/product.jsp?id=<%=spmoiByPage11.get(j1).getId()%>">Xem chi tiết <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
 									</div>
