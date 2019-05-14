@@ -1,3 +1,6 @@
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="DAO.SanPhamMoi"%>
 <%@page import="model.products" %>
@@ -9,14 +12,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/web/" />
+
 <link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/dest/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../assets/dest/vendors/colorbox/example3/colorbox.css">
-	<link rel="stylesheet" title="style" href="../assets/dest/css/style.css">
-	<link rel="stylesheet" href="../assets/dest/css/animate.css">
-	<link rel="stylesheet" title="style" href="../assets/dest/css/huong-style.css">
+	<link rel="stylesheet" href="assets/dest/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/dest/vendors/colorbox/example3/colorbox.css">
+	<link rel="stylesheet" title="style" href="assets/dest/css/style.css">
+	<link rel="stylesheet" href="assets/dest/css/animate.css">
+	<link rel="stylesheet" title="style" href="assets/dest/css/huong-style.css">
 </head>
 <body>
 	<jsp:include page="/layout/header.jsp"></jsp:include>
@@ -34,7 +39,7 @@ String sql="SELECT * FROM products where id="+request.getParameter("id");
 %>
 			<div class="pull-right">
 				<div class="beta-breadcrumb font-large">
-					<a href="index.html">Home</a> / <span><%=sp.getName() %></span>
+					<a href="pages/index.jsp">Home</a> / <span><%=sp.getName() %></span>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -48,7 +53,7 @@ String sql="SELECT * FROM products where id="+request.getParameter("id");
 
 					<div class="row">
 						<div class="col-sm-4">
-							<img src="../image/product/<%=sp.getImage() %>" alt="">
+							<img src="image/product/<%=sp.getImage() %>" alt="">
 						</div>
 						<div class="col-sm-8">
 							<div class="single-item-body">
@@ -78,7 +83,7 @@ String sql="SELECT * FROM products where id="+request.getParameter("id");
 									<option value="White">White</option>
 								</select>
 								
-								<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+								<a class="add-to-cart" href="pages/addtoCart?productId=<%=sp.getId()%>"><i class="fa fa-shopping-cart"></i></a>
 								<div class="clearfix"></div>
 							</div>
 						</div>
@@ -119,7 +124,7 @@ String sql="SELECT * FROM products where id="+request.getParameter("id");
 							<div class="col-sm-4">
 								<div class="single-item">
 									<div class="single-item-header">
-										<a href="product.html"><img height="300px" src="../image/product/<%=sp2.getImage() %>" alt=""></a>
+										<a href=""><img height="300px" src="image/product/<%=sp2.getImage() %>" alt=""></a>
 									</div>
 									<div class="single-item-body">
 										<p class="single-item-title"><%=sp2.getName() %></p>
@@ -128,8 +133,8 @@ String sql="SELECT * FROM products where id="+request.getParameter("id");
 										</p>
 									</div>
 									<div class="single-item-caption">
-										<a class="add-to-cart pull-left" href="product.html"><i class="fa fa-shopping-cart"></i></a>
-										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+										<a class="add-to-cart pull-left" href="pages/addtoCart?productId=<%=sp2.getId()%>"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="pages/product.jsp?id=<%=sp2.getId()%>">Xem chi tiết <i class="fa fa-chevron-right"></i></a>
 										<div class="clearfix"></div>
 									</div>
 								</div>
@@ -145,7 +150,7 @@ String sql="SELECT * FROM products where id="+request.getParameter("id");
 							<div class="beta-sales beta-lists">
 							<% for(products sp3:spKM){%>
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img   src="../image/product/<%=sp3.getImage() %>" alt=""></a>
+									<a class="pull-left" href="pages/product.jsp?id=<%=sp3.getId()%>"><img src="image/product/<%= sp3.getImage() %>" alt=""></a>
 									<div class="media-body">
 										<%=sp3.getName() %>
 										<span class="beta-sales-price"><%=sp3.getUnit_price() %></span>
@@ -161,7 +166,7 @@ String sql="SELECT * FROM products where id="+request.getParameter("id");
 							<div class="beta-sales beta-lists">
 							<% for(products sp4:spNew){ %>
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="../image/product/<%=sp4.getImage() %>" alt=""></a>
+									<a class="pull-left" href="pages/product.jsp?id=<%=sp4.getId()%>"><img src="image/product/<%=sp4.getImage() %>" alt=""></a>
 									<div class="media-body">
 										<%=sp4.getName() %>
 										<span class="beta-sales-price"><%=sp4.getUnit_price() %></span>
@@ -178,23 +183,7 @@ String sql="SELECT * FROM products where id="+request.getParameter("id");
 	</div> <!-- .container -->
 	<jsp:include page="/layout/footer.jsp"></jsp:include>
 	<jsp:include page="/layout/script.jsp"></jsp:include>
-	<script type="text/javascript">
-    $(function() {
-        // this will get the full URL at the address bar
-        var url = window.location.href;
-
-        // passes on every "a" tag
-        $(".main-menu a").each(function() {
-            // checks if its the same on the address bar
-            if (url == (this.href)) {
-                $(this).closest("li").addClass("active");
-				$(this).parents('li').addClass('parent-active');
-            }
-        });
-    });
-
-
-</script>
+	
 <script>
 	 jQuery(document).ready(function($) {
                 'use strict';

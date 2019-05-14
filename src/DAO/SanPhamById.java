@@ -24,6 +24,7 @@ public class SanPhamById implements ISanPhamById{
 				products temp1=new products();
 				
 				while(rs.next()){
+					temp1.setId(rs.getInt("id"));
 					temp1.setName(rs.getString("name"));
 				temp1.setId_type(rs.getInt("id_type"));
 				temp1.setDescription(rs.getString("description"));
@@ -40,6 +41,12 @@ public class SanPhamById implements ISanPhamById{
 			}
 			return null;
 						
+	}
+	public static void main(String[] args) {
+		SanPhamById demo=new SanPhamById();
+		products demo1=demo.getSanPhamById("Select *from products where id=1");
+		if(demo1!=null)
+			System.out.println("ok");
 	}
 
 }

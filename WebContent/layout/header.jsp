@@ -1,4 +1,9 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page import="DAO.DanhMucDAO"%>
+<%@page import="model.products"%>
+<%@page import="model.Order" %>
+<%@page import="model.Item"%>
 <%@page import="model.type_products" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -7,7 +12,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<base href="${fn:substring(url, 0, fn:length(url) - fn:length(uri))}${req.contextPath}/web/" />
 </head>
 <body>
 	<div id="header">
@@ -47,47 +52,36 @@
 						<div class="cart">
 							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (Trống) <i class="fa fa-chevron-down"></i></div>
 							<div class="beta-dropdown cart-body">
+							<%      float tongTien=0;
+									Order cart=new Order();
+									if(session.getAttribute("cart")!=null)
+									     {
+									        cart=(Order)session.getAttribute("cart");%>
+							   <%     for(Item item :cart.getItems()){ %>
 								<div class="cart-item">
 									<div class="media">
-										<a class="pull-left" href="#"><img src="assets/dest/images/products/cart/1.png" alt=""></a>
+										<a class="pull-left" href="#"><img src="image/product/<%=item.getProduct().getImage() %>" alt=""></a>
 										<div class="media-body">
-											<span class="cart-item-title">Sample Woman Top</span>
+											<span class="cart-item-title"><%=item.getProduct().getName() %></span>
 											<span class="cart-item-options">Size: XS; Colar: Navy</span>
-											<span class="cart-item-amount">1*<span>$49.50</span></span>
+											<span class="cart-item-amount"><%=item.getQuantity()%>*<span><%=item.getPrice() %></span></span>
 										</div>
 									</div>
 								</div>
-
-								<div class="cart-item">
-									<div class="media">
-										<a class="pull-left" href="#"><img src="assets/dest/images/products/cart/2.png" alt=""></a>
-										<div class="media-body">
-											<span class="cart-item-title">Sample Woman Top</span>
-											<span class="cart-item-options">Size: XS; Colar: Navy</span>
-											<span class="cart-item-amount">1*<span>$49.50</span></span>
-										</div>
-									</div>
-								</div>
-
-								<div class="cart-item">
-									<div class="media">
-										<a class="pull-left" href="#"><img src="assets/dest/images/products/cart/3.png" alt=""></a>
-										<div class="media-body">
-											<span class="cart-item-title">Sample Woman Top</span>
-											<span class="cart-item-options">Size: XS; Colar: Navy</span>
-											<span class="cart-item-amount">1*<span>$49.50</span></span>
-										</div>
-									</div>
-								</div>
-
+								<%tongTien+=item.getQuantity()*item.getPrice();%>
+							<%}} %>
 								<div class="cart-caption">
-									<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">$34.55</span></div>
+									<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value"><%=tongTien%>đ</span></div>
 									<div class="clearfix"></div>
-
+           
 									<div class="center">
 										<div class="space10">&nbsp;</div>
-										<a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
-									</div>
+										<%  if(tongTien>0){ %>
+										<a href="pages/checkout.jsp " class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
+									   <%   }else{   %>
+									     <a href="pages/index.jsp" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
+									     
+									    <%} %>
 								</div>
 							</div>
 						</div> <!-- .cart -->
@@ -102,12 +96,12 @@
 				<div class="visible-xs clearfix"></div>
 				<nav class="main-menu">
 					<ul class="l-inline ov">
-						<li><a href="index.html">Trang chủ</a></li>
-						<li><a href="#">Sản phẩm</a>
+						<li><a href="pages/index.jsp">Trang chủ</a></li>
+						<li><a href="pages/type_products.jsp">Sản phẩm</a>
 							<ul class="sub-menu">
 							<% DanhMucDAO temp=new DanhMucDAO();
 							for(type_products loaisp :temp.getTypeProduct("SELECT * FROM type_products")){ %>
-								<li><a href="product_type.html"><%= loaisp.getName() %></a></li>
+								<li><a href="pages/type_products.jsp?id_type=<%=loaisp.getId()%>"><%= loaisp.getName() %></a></li>
 								<% } %>
 							</ul>
 						</li>

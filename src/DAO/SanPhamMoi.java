@@ -22,6 +22,7 @@ public class SanPhamMoi implements ISanPhamMoi{
 			
 			while(rs.next()){
 				products temp1=new products();
+				temp1.setId(rs.getInt("id"));
 				temp1.setName(rs.getString("name"));
 				temp1.setId_type(rs.getInt("id_type"));
 				temp1.setDescription(rs.getString("description"));
@@ -60,6 +61,7 @@ public class SanPhamMoi implements ISanPhamMoi{
 			ResultSet rs=(ResultSet) pr.executeQuery();
 			while(rs.next()) {
 				products temp1=new products();
+				temp1.setId(rs.getInt("id"));
 				temp1.setName(rs.getString("name"));
 				temp1.setId_type(rs.getInt("id_type"));
 				temp1.setDescription(rs.getString("description"));

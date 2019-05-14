@@ -25,6 +25,7 @@ public class DanhMucDAO implements IDanhMucDAO{
 			while(rs.next())
 			{
 				type_products temp1=new type_products();
+				temp1.setId(rs.getInt("id"));
 				temp1.setName(rs.getString("name"));
 				temp1.setImage(rs.getString("image"));
 				temp1.setDescription(rs.getString("description"));

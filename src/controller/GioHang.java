@@ -14,7 +14,7 @@ public class GioHang extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher dispatcher=req.getRequestDispatcher("/pages/checkout.jsp");
+		RequestDispatcher dispatcher=req.getRequestDispatcher("pages/index.jsp");
 		dispatcher.forward(req, resp);
 	}
 	@Override
