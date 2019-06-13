@@ -28,7 +28,7 @@
 					<ul class="top-details menu-beta l-inline">
 						<li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
 						<li><a href="#">Đăng kí</a></li>
-						<li><a href="#">Đăng nhập</a></li>
+						<li><a href="pages/product_list.jsp">Đăng nhập</a></li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>

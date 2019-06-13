@@ -30,7 +30,7 @@
 		<div class="container">
 		<div id="content">
 			
-			<form action="#" method="post" class="beta-form-checkout">
+			<form action="dathang" method="post" class="beta-form-checkout">
 				<div class="row">
 					<div class="col-sm-6">
 						<h4>Đặt hàng</h4>
@@ -38,34 +38,34 @@
 
 						<div class="form-block">
 							<label for="name">Họ tên*</label>
-							<input type="text" id="name" placeholder="Họ tên" required>
+							<input type="text" id="name" name="name" placeholder="Họ tên" required>
 						</div>
 						<div class="form-block">
 							<label>Giới tính </label>
-							<input id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
-							<input id="gender" type="radio" class="input-radio" name="gender" value="nữ" style="width: 10%"><span>Nữ</span>
+							<input name="gender" id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
+							<input  name="gender" id="gender" type="radio" class="input-radio" name="gender" value="nữ" style="width: 10%"><span>Nữ</span>
 										
 						</div>
 
 						<div class="form-block">
 							<label for="email">Email*</label>
-							<input type="email" id="email" required placeholder="expample@gmail.com">
+							<input type="email" name="name" id="email" required placeholder="expample@gmail.com">
 						</div>
 
 						<div class="form-block">
-							<label for="adress">Địa chỉ*</label>
-							<input type="text" id="adress" placeholder="Street Address" required>
+							<label for="address">Địa chỉ*</label>
+							<input  name="address" type="text" id="address" placeholder="Street Address" required>
 						</div>
 						
 
 						<div class="form-block">
 							<label for="phone">Điện thoại*</label>
-							<input type="text" id="phone" required>
+							<input  name="phone" type="text" id="phone" required>
 						</div>
 						
 						<div class="form-block">
 							<label for="notes">Ghi chú</label>
-							<textarea id="notes"></textarea>
+							<textarea  name="notes" id="notes"></textarea>
 						</div>
 					</div>	<%       float tongTien=0;
 									Order cart=new Order();
@@ -133,7 +133,7 @@
 								</ul>
 							</div>
 
-							<div class="text-center"><a class="beta-btn primary" href="#">Đặt hàng <i class="fa fa-chevron-right"></i></a></div>
+							<input class="btn btn-primary" type="submit" value="Đặt hàng"> </div>
 						</div> <!-- .your-order -->
 					</div>
 				</div>
